@@ -1,0 +1,23 @@
+<!--
+ Author: cleanet
+ cleannet29@gmail.com
+ Licensed by GNU GENERAL PUBLIC LICENSE VERSION 3
+ This file is part of ClassAdmin.
+ ClassAdmin is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ ClassAdmin is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ You should have received a copy of the GNU General Public License along with ClassAdmin. If not, see <https://www.gnu.org/licenses/>.
+ Copyright 2022 cleanet
+!-->
+{% extends "src/base.html" %}
+{% block content %}
+    <h1>{{nameApp}}</h1>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="password" name="password" placeholder="password">
+        <input type="password" id="twoFA" name="otp" placeholder="code OTP">
+        <div id="checkbox">
+            <input type="checkbox" id="checkRecoveryCodes">
+            <label for="checkRecoveryCodes">Access with recovery codes</label>
+        </div>
+        <input type="button" value="Entrar">{% csrf_token %}
+    </form>
+{% endblock %}
